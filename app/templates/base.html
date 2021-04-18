@@ -96,7 +96,7 @@
             row. content {
                 height: auto;
             }
-
+        }
 
     </style>
 {% endblock %}
@@ -108,9 +108,6 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{ url_for('main.index') }}"><img src="HKGolden Icon.jpg"></a>
             </div>
@@ -146,14 +143,6 @@
     <nav class="navbar navbar-default " role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed btn-circle" data-toggle="collapse"
-                        data-target="#navbarToggleExternalContent"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <button class="navbar-brand" type="button" data-toggle="collapse"
                         data-target="#navbarToggleExternalContent" style="margin-left: 165px">
                     <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
@@ -184,13 +173,14 @@
                     </li>
                 </ul>
                 <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            style="padding-right: 20px; float: none; margin-top: 8px; border-radius: 4px 0px 0px 4px; margin-left: 191px;">全部<span class="caret" style="margin-left: 12px"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">全部</a></li>
-                                    <li><a href="#">正式</a></li>
-                                    <li><a href="#">公海</a></li>
-                                </ul>
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"
+                            style="padding-right: 20px; float: none; margin-top: 8px; border-radius: 4px 0px 0px 4px; margin-left: 191px;">
+                        貼文<span class="caret" style="margin-left: 12px"></span></button>
+                    <ul class="dropdown-menu" style="margin-left: 392px; min-width: 83px;">
+                        <li><a href="#">貼文</a></li>
+                        <li><a href="#">作者</a></li>
+                    </ul>
                 </div>
                 <form class="navbar-form navbar-centered" action="#" method="GET"
                       style="float: none; position: absolute; top: 34%; left: 50%; transform: translate(-50%, -50%)">
@@ -227,4 +217,15 @@
     {{ super() }}
     {{ moment.include_moment() }}
     {{ moment.lang(g.locale) }}
+        <script>
+        const $menu = $('#navbarToggleExternalContent');
+
+        $menu.on('show.bs.collapse', function () {
+            $menu.addClass('menu-show');
+        });
+
+        $menu.on('hide.bs.collapse', function () {
+            $menu.removeClass('menu-show');
+        });
+    </script>
 {% endblock %}
