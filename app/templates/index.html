@@ -2,26 +2,101 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block current_app_content %}
-    <h1>{{ _('Hi, %(username)s!', username=current_user.username) }}</h1>
-    {% if form %}
-        {{ wtf.quick_form(form) }}
-        <br>
-    {% endif %}
-    {% for post in posts %}
-        {% include '_post.html' %}
-    {% endfor %}
-    <nav aria-label="...">
-        <ul class="pager">
-            <li class="previous{% if not prev_url %} disabled{% endif %}">
-                <a href="{{ prev_url or '#' }}">
-                    <span aria-hidden="true">&larr;</span> {{ _('Newer posts') }}
-                </a>
-            </li>
-            <li class="next{% if not next_url %} disabled{% endif %}">
-                <a href="{{ next_url or '#' }}">
-                    {{ _('Older posts') }} <span aria-hidden="true">&rarr;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-1  col-md-1"></div>
+            <div class="col-sm-2 col-md-1 sidenav">
+                <div class="bg-dark collapse position-fixed" id="navbarToggleExternalContent">
+                    <ul class="nav py-4">
+                        <h6>RECOMMEND</h6>
+                            <div class="myDIV"><li ><a href="#chatting"><span class="glyphicon glyphicon-tint" aria-hidden="true" style="float: left"></span>Chatting</a>
+                            </li></div>
+                            <div class="hide">chatting</div>
+                        <li><a href="#study"><span class="glyphicon glyphicon-bookmark" aria-hidden="true" style="float: left"></span>study</a>
+                        </li>
+                    </ul>
+                    <ul class="nav py-4">
+                        <h6>what are </h6>
+                        <li><a href="#chatting"><span class="glyphicon glyphicon-tint" aria-hidden="true" style="float: left"></span>Chatting</a>
+                        </li>
+                        <li><a href="#study"><span class="glyphicon glyphicon-newspaper" aria-hidden="true" style="float: left"></span>study</a>
+                        </li>
+                    </ul>
+                    <ul class="nav py-4">
+                        <h6>what are </h6>
+                        <li><a href="#chatting"><span class="glyphicon glyphicon-tint" aria-hidden="true" style="float: left"></span>Chatting</a>
+                        </li>
+                        <li><a href="#study"><span class="glyphicon glyphicon-phone" aria-hidden="true" style="float: left"></span>study</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-8">
+                <div class="container">
+                    <div class="tab-content" style="margin-top: 50px">
+                        <ul class="nav nav-tabs list-inline">
+                            <li>
+                                <button type="button" class="btn">Basic</button>
+                            </li>
+                            <li><h4>Goldenform</h4></li>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
+                                                    href="#">Dropdown<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Lastest time</a></li>
+                                    <li><a href="#">Post time</a></li>
+                                    <li><a href="#">Hot</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
+                                                    href="#">Dropdown<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">All</a></li>
+                                    <li><a href="#">Format</a></li>
+                                    <li><a href="#">Other</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-group" style="width: 500px; margin-top: 20px" >
+                        <a href="#" class="list-group-item active">
+                            <h4 class="list-group-item-heading">First List Group Item Heading</h4>
+                            <p class="list-group-item-text">List Group Item Text</p>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Second List Group Item Heading</h4>
+                            <p class="list-group-item-text">List Group Item Text</p>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Third List Group Item Heading</h4>
+                            <p class="list-group-item-text">List Group Item Text</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 col-md-2 sidenav">
+                <div class="well">
+                    <p>ADS</p>
+                </div>
+                <div class="well">
+                    <p>ADS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <p>Footer Text</p>
+    </footer>
+
+    <script>
+        const $menu = $('#navbarToggleExternalContent');
+
+        $menu.on('show.bs.collapse', function () {
+            $menu.addClass('menu-show');
+        });
+
+        $menu.on('hide.bs.collapse', function () {
+            $menu.removeClass('menu-show');
+        });
+    </script>
 {% endblock %}
