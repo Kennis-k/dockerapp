@@ -4,6 +4,103 @@
     {% if title %}{{ title }} - Microblog{% else %}{{ _('Welcome to Microblog') }}{% endif %}
 {% endblock %}
 
+{% block styles %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    {{ super() }}
+    <style>
+        .btn-circle {
+            margin: 5px 5px 5px 5px;
+            width: 40px;
+            height: 40px;
+            padding: 6px 0px;
+            border-radius: 20px;
+            text-align: center;
+        "
+        }
+
+        collapsing {
+            width: 0;
+            transition-property: width;
+            height: 100%;
+            white-space: nowrap;
+        }
+
+        . hide {
+            display: none;
+        }
+
+        .myDIV:hover + . hide {
+            display: block;
+            color: red;
+        }
+
+        navbarToggleExternalContent {
+            transform: translateX(-100%);
+            transition: transform .35s ease;
+            display: block;
+            height: 100%;
+            min-height: 100%;
+        }
+
+        #navbarToggleExternalContent h6 {
+            display: block;
+            color: black;
+            text-align: left;
+            padding: 5px 8px;
+            text-decoration: none;
+            font-size: 13px;
+
+        }
+
+        #navbarToggleExternalContent li {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 5px 8px;
+            text-decoration: none;
+            font-size: 13px;
+            border-bottom: 3px solid transparent;
+        }
+
+        . navbarToggleExternalContent. menu-show {
+            transform: translateX(0%);
+        }
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        row. content {
+            height: 450px
+        }
+
+        /* Set gray background color and 100% height */
+        . sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            . sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            row. content {
+                height: auto;
+            }
+
+
+    </style>
+{% endblock %}
+
 {% block navbar %}
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -74,7 +171,7 @@
                     <li>
                         <button type="button" class="btn btn-circle btn-sm" href="#"><span
                                 class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-                            </button>
+                        </button>
                     </li>
                     <li>
                         <button type="button" class="btn btn-circle btn-sm" href="#"><span
