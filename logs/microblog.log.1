@@ -1,106 +1,107 @@
-2021-04-13 10:45:59,545 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 10:46:07,302 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 10:56:16,108 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 11:17:18,015 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 11:22:03,432 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 11:25:43,942 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 11:28:36,033 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 11:28:49,244 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 11:48:10,230 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 11:51:10,042 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 11:54:45,694 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:06:44,394 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:09:49,169 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:12:52,219 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:13:04,667 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:13:13,097 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:13:15,059 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:15:44,874 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:16:00,857 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:17:47,510 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:18:55,099 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:20:19,224 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:20:36,245 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:20:51,248 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:22:54,040 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:23:09,050 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:23:45,554 ERROR: Exception on /auth/register [POST] [in /Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2021-04-20 15:06:52,303 ERROR: Exception on /auth/login [GET] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
-    context)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 508, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such table: user
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/pearly/PycharmProjects/HKGolden/app/auth/routes.py", line 42, in register
-    if form.validate_on_submit():
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask_wtf/form.py", line 101, in validate_on_submit
-    return self.is_submitted() and self.validate()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/wtforms/form.py", line 310, in validate
-    return super(Form, self).validate(extra)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/wtforms/form.py", line 152, in validate
-    if not field.validate(self, extra):
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/wtforms/fields/core.py", line 206, in validate
-    stop_validation = self._run_validation_chain(form, chain)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/wtforms/fields/core.py", line 226, in _run_validation_chain
-    validator(form, self)
-  File "/Users/pearly/PycharmProjects/HKGolden/app/auth/forms.py", line 26, in validate_username
-    user = User.query.filter_by(username=username.data).first()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2835, in first
-    ret = list(self[0:1])
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2627, in __getitem__
-    return list(res)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2935, in __iter__
-    return self._execute_and_instances(context)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2958, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
-    context)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 186, in reraise
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\auth\routes.py", line 28, in login
+    return render_template('auth/login.html', title=_('Sign In'), form=form)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
-    context)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 508, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.username = ?\n LIMIT ? OFFSET ?'] [parameters: ('pearly0125', 1, 0)] (Background on this error at: http://sqlalche.me/e/e3q8)
-2021-04-13 12:30:08,502 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:30:27,741 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:31:00,952 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:32:05,170 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 12:41:04,683 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 13:05:10,256 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 13:07:23,880 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 13:07:53,361 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 13:09:19,315 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 13:09:32,667 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 13:10:17,588 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 13:13:30,143 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 13:13:40,022 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 13:14:46,933 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 13:20:52,536 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-13 13:21:35,935 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\auth\login.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 21, in block "body"
+    {% block navbar %}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\base.html", line 160, in block "navbar"
+    <button type="button" class="btn btn-link btn-sm" href="{{ url_for('mina.main') }}"><span
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'mina.main'. Did you mean 'main.main' instead?
+2021-04-20 15:07:00,736 ERROR: Exception on /auth/login [GET] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\auth\routes.py", line 28, in login
+    return render_template('auth/login.html', title=_('Sign In'), form=form)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\auth\login.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 21, in block "body"
+    {% block navbar %}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\base.html", line 160, in block "navbar"
+    <button type="button" class="btn btn-link btn-sm" href="{{ url_for('mina.main') }}"><span
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'mina.main'. Did you mean 'main.main' instead?
+2021-04-20 15:07:11,959 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]

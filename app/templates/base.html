@@ -98,6 +98,12 @@
             }
         }
 
+        . card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
     </style>
 {% endblock %}
 
@@ -152,26 +158,21 @@
                 </button>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <ul id="listtop" class="nav navbar-nav navbar-right">
+                <div id="listtop" class="nav navbar-nav navbar-right">
                     <li>
-                        <button type="button" class="btn btn-circle btn-sm" href="#"><span
-                                class="glyphicon glyphicon-home" aria-hidden="true"></span></button>
+                        <a href="{{ url_for('main.main') }}"><span class="glyphicon glyphicon-home"></span></a>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-circle btn-sm" href="#"><span
-                                class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-                        </button>
+                        <a href="{{ url_for('auth.login') }}"><span class="glyphicon glyphicon-envelope"></span></a>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-circle btn-sm" href="#"><span
-                                class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></button>
+                        <a href="{{ url_for('auth.login') }}"><span class="glyphicon glyphicon-envelope"></span></a>
                     </li>
 
                     <li>
-                        <button type="button" class="btn btn-circle btn-sm" href="#"><span
-                                class="glyphicon glyphicon-user" aria-hidden="true"></span></button>
+                        <a href="{{ url_for('auth.login') }}"><span class="glyphicon glyphicon-user"></span></a>
                     </li>
-                </ul>
+                </div>
                 <div class="dropdown">
                     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false"
@@ -209,7 +210,10 @@
         {% endwith %}
 
         {# current_application content needs to be provided in the current_app_content block #}
+
+        {% include 'leftnav.html' %}
         {% block current_app_content %}{% endblock %}
+        {% include 'rightnav.html' %}
     </div>
 {% endblock %}
 
@@ -217,7 +221,7 @@
     {{ super() }}
     {{ moment.include_moment() }}
     {{ moment.lang(g.locale) }}
-        <script>
+    <script>
         const $menu = $('#navbarToggleExternalContent');
 
         $menu.on('show.bs.collapse', function () {
