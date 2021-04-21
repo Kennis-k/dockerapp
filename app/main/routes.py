@@ -91,6 +91,23 @@ def edit_profile():
                            form=form)
 
 
+@bp.route('/post_submit', methods=['GET', 'POST'])
+@login_required
+def submit():
+    form = Newtopic_post()
+    if form.validate_on_submit():
+        Newtopic_post = Newtopic_post(topic=form.topic.data, author=current_user)
+        db.session.add(Newtopic_post)
+        db.session.commit()
+        flash(_('Your post is now live!'))
+        return redirect(url_for('main.Newtopic'))
+    elif request.method == 'GET':
+        form.topic.data = current_user.topic
+        form.post.data = current_user.post
+    return render_template('Newtopic.html', title=_('Newtopic'),
+                           form=form)
+
+
 @bp.route('/follow/<username>')
 @login_required
 def follow(username):

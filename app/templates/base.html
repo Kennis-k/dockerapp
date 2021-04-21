@@ -146,7 +146,7 @@
     </nav>
 
     <div class="container"></div>
-    <nav class="navbar navbar-default " role="navigation">
+    <nav class="navbar navbar-default " role="navigation" style="background-color: #346599;">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button class="navbar-brand" type="button" data-toggle="collapse"
@@ -163,7 +163,52 @@
                         <a href="{{ url_for('main.main') }}"><span class="glyphicon glyphicon-home"></span></a>
                     </li>
                     <li>
-                        <a href="{{ url_for('auth.login') }}"><span class="glyphicon glyphicon-envelope"></span></a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal"
+                                style="margin-top: 2px; padding: 10px 15px; font-size: 21px; line-height:0; ">
+                            <span class="glyphicon glyphicon-pencil "></span>
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content" style="width:800px; right:125px">
+                                    <div class="modal-header" style="background: #346599">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel" style=" color: white">開新貼文</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <select class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                        <br>
+                                        <input type="text" class="form-control" placeholder="Text input" >
+                                        <br>
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-secondary">Left</button>
+                                            <button type="button" class="btn btn-secondary">Middle</button>
+                                            <button type="button" class="btn btn-secondary">Right</button>
+                                            <button type="button" class="btn btn-secondary">Left</button>
+                                            <button type="button" class="btn btn-secondary">Middle</button>
+                                            <button type="button" class="btn btn-secondary">Right</button>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <textarea class="form-control" rows="10"></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                                        </button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <a href="{{ url_for('auth.login') }}"><span class="glyphicon glyphicon-envelope"></span></a>
@@ -218,10 +263,12 @@
 {% endblock %}
 
 {% block scripts %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     {{ super() }}
     {{ moment.include_moment() }}
     {{ moment.lang(g.locale) }}
     <script>
+
         const $menu = $('#navbarToggleExternalContent');
 
         $menu.on('show.bs.collapse', function () {
@@ -231,5 +278,7 @@
         $menu.on('hide.bs.collapse', function () {
             $menu.removeClass('menu-show');
         });
+
+
     </script>
 {% endblock %}

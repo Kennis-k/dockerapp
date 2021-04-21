@@ -1,6 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, \
-    TextAreaField
+from wtforms import StringField, SubmitField, HiddenField, TextAreaField
 from wtforms.validators import ValidationError, DataRequired, Length
 from flask_babel import _, lazy_gettext as _l
 from app.models import User
@@ -25,4 +24,12 @@ class EditProfileForm(FlaskForm):
 
 class PostForm(FlaskForm):
     post = TextAreaField(_l('Say something'), validators=[DataRequired()])
+    submit = SubmitField(_l('Submit'))
+
+
+class Newtopic_post(FlaskForm):
+    pid = HiddenField()
+    topic = TextAreaField(_l('Topic'), validators=[DataRequired(Length(1, 64))])
+    post = TextAreaField(_l('Content'),  validators=[Length(min=0, max=140)])
+    user_id = HiddenField()
     submit = SubmitField(_l('Submit'))

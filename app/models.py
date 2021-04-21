@@ -89,3 +89,18 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+
+
+class Newtopic_post(db.Model):
+    pid = db.Column(db.Integer, primary_key=True)
+    topic = db.Column(db.String(20))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    post = db.Column(db.String(140))
+
+    def __init__(self, pid, topic, timestamp, user_id, post):
+        self.pid = pid
+        self.topic = topic
+        self.timestamp = timestamp
+        self.user_id = user_id
+        self.post = post
