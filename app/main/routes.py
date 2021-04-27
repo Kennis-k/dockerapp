@@ -92,7 +92,6 @@ def edit_profile():
 
 
 @bp.route('/post_submit', methods=['GET', 'POST'])
-@login_required
 def submit():
     form = Newtopic_post()
     if form.validate_on_submit():
@@ -100,7 +99,7 @@ def submit():
         db.session.add(Newtopic_post)
         db.session.commit()
         flash(_('Your post is now live!'))
-        return redirect(url_for('main.Newtopic'))
+        return redirect(url_for('main.main'))
     elif request.method == 'GET':
         form.topic.data = current_user.topic
         form.post.data = current_user.post
