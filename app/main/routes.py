@@ -3,7 +3,7 @@ from flask import render_template, flash, redirect, url_for, request, g
 from flask_login import current_user, login_required
 from flask_babel import _, get_locale
 from app import current_app, db
-from app.main.forms import EditProfileForm, PostForm
+from app.main.forms import EditProfileForm, PostForm, Post_topic
 from app.models import User, Post
 from app.main import bp
 
@@ -91,20 +91,20 @@ def edit_profile():
                            form=form)
 
 
-@bp.route('/post_submit', methods=['GET', 'POST'])
+@bp.route('/post_submit', methods=['GET','POST'])
 @login_required
 def submit():
-    form = Newtopic_post()
+    form = Post_topic()
     if form.validate_on_submit():
-        Newtopic_post = Newtopic_post(topic=form.topic.data, author=current_user)
-        db.session.add(Newtopic_post)
+        topic = Post_topic(topic=form.topic.data, author=current_user)
+        db.session.add(topic)
         db.session.commit()
         flash(_('Your post is now live!'))
-        return redirect(url_for('main.Newtopic'))
+        return redirect(url_for('main.main'))
     elif request.method == 'GET':
         form.topic.data = current_user.topic
         form.post.data = current_user.post
-    return render_template('Newtopic.html', title=_('Newtopic'),
+    return render_template('main.html', title=_('Home'),
                            form=form)
 
 

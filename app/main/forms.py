@@ -27,7 +27,7 @@ class PostForm(FlaskForm):
     submit = SubmitField(_l('Submit'))
 
 
-class Newtopic_post(FlaskForm):
+class Post_topic(FlaskForm):
     pid = HiddenField()
     topic = TextAreaField(_l('Topic'), validators=[DataRequired(Length(1, 64))])
     post = TextAreaField(_l('Content'),  validators=[Length(min=0, max=140)])
