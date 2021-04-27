@@ -1,4 +1,4 @@
-2021-04-21 09:27:43,528 ERROR: Exception on / [GET] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
+2021-04-28 01:15:04,621 ERROR: Exception on /new_topic [POST] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,50 +12,32 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 22, in main
-    return render_template('main.html')
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\main.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 21, in block "body"
-    {% block navbar %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\base.html", line 166, in block "navbar"
-    <a href="{{ url_for('main.Newtopic') }}"><span class="glyphicon glyphicon-envelope"></span></a>
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 97, in new_topic
+    post = Post(body=form.post.data, author=current_user)
+  File "<string>", line 4, in __init__
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\state.py", line 417, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
     raise value
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
-    force_external=external)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'main.Newtopic'. Did you mean 'main.explore' instead?
-2021-04-21 09:31:03,804 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 09:32:39,953 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 09:33:06,785 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 09:41:00,130 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 09:41:09,291 ERROR: Exception on / [GET] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\state.py", line 414, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\ext\declarative\base.py", line 700, in _declarative_constructor
+    setattr(self, k, kwargs[k])
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 229, in __set__
+    instance_dict(instance), value, None)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 813, in set
+    value = self.fire_replace_event(state, dict_, value, old, initiator)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 833, in fire_replace_event
+    state, value, previous, initiator or self._replace_token)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1181, in emit_backref_from_scalar_set_event
+    child_state, child_dict = instance_state(child),\
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute '_sa_instance_state'
+2021-04-28 01:23:30,179 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
+2021-04-28 01:23:39,972 ERROR: Exception on /new_topic [POST] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -69,53 +51,60 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 22, in main
-    return render_template('main.html')
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\main.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 21, in block "body"
-    {% block navbar %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\base.html", line 166, in block "navbar"
-    <a href="{{ url_for('main.Newtopic') }}"><span class="glyphicon glyphicon-envelope"></span></a>
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 97, in new_topic
+    record = Newtopic(topic=form.topic.data, post=form.post.data, tag=form.tag.data)
+TypeError: __init__() missing 3 required positional arguments: 'pid', 'timestamp', and 'user_id'
+2021-04-28 01:43:54,036 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
+2021-04-28 01:44:05,392 ERROR: Exception on /new_topic [POST] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
   File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
-    force_external=external)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'main.Newtopic'. Did you mean 'main.explore' instead?
-2021-04-21 09:43:10,766 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 09:55:50,454 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 09:56:41,612 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 18:43:20,689 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 18:45:12,488 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 18:49:14,839 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 18:51:35,795 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 18:52:08,606 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 19:01:51,125 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 19:03:56,864 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-21 19:11:30,742 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 97, in new_topic
+    record = Newtopic(topic=form.topic.data, post=form.post.data, tag=form.tag.data)
+TypeError: __init__() missing 3 required positional arguments: 'pid', 'timestamp', and 'user_id'
+2021-04-28 01:46:09,932 ERROR: Exception on /new_topic [POST] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 97, in new_topic
+    record = Newtopic(topic=form.topic.data, post=form.post.data, tag=form.tag.data)
+TypeError: __init__() missing 3 required positional arguments: 'pid', 'timestamp', and 'user_id'
+2021-04-28 01:53:29,765 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
+2021-04-28 01:54:06,429 ERROR: Exception on /new_topic [POST] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 97, in new_topic
+    record = Newtopic(pid=form.pid.data, timestamp=form.timestamp.data, user_id=form.user_id.data,
+AttributeError: 'TopicForm' object has no attribute 'timestamp'
+2021-04-28 01:54:52,555 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]

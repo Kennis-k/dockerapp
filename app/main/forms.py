@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, HiddenField, TextAreaField
+from wtforms import StringField, SubmitField, HiddenField, TextAreaField, SelectField
 from wtforms.validators import ValidationError, DataRequired, Length
 from flask_babel import _, lazy_gettext as _l
 from app.models import User
@@ -27,9 +27,16 @@ class PostForm(FlaskForm):
     submit = SubmitField(_l('Submit'))
 
 
-class Post_topic(FlaskForm):
+CHOICES = [('1', '硬件台'), ('2', '音樂台'), ('3', '飲食台')]
+
+
+class TopicForm(FlaskForm):
     pid = HiddenField()
-    topic = TextAreaField(_l('Topic'), validators=[DataRequired(Length(1, 64))])
-    post = TextAreaField(_l('Content'),  validators=[Length(min=0, max=140)])
+    topic = StringField(_l('Topic'), validators=[DataRequired(Length(1, 64))])
+    post = TextAreaField(_l('Content'), validators=[Length(min=0, max=140)])
+    tag = SelectField('tag', choices=CHOICES)
     user_id = HiddenField()
     submit = SubmitField(_l('Submit'))
+
+
+

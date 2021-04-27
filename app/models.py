@@ -95,12 +95,35 @@ class Newtopic(db.Model):
     pid = db.Column(db.Integer, primary_key=True)
     topic = db.Column(db.String(20))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    tag = db.Column(db.String(20))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     post = db.Column(db.String(140))
 
-    def __init__(self, pid, topic, timestamp, user_id, post):
+    def __init__(self, pid, topic, timestamp, user_id, post, tag):
         self.pid = pid
         self.topic = topic
         self.timestamp = timestamp
         self.user_id = user_id
         self.post = post
+        self.tag = tag
+
+
+class Ads(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), nullable=False)
+    data = db.Column(db.LargeBinary, nullable=False)  # Actual data, needed for Download
+    rendered_data = db.Column(db.Text, nullable=False)  # Data to render the pic in browser
+    pic_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    def __init__(self, id, name, data, user_id, rendered_data, pic_date):
+        self.id = id
+        self.name = name
+        self.data = data
+        self.user_id = user_id
+        self.pic_date = pic_date
+        self.rendered_data = rendered_data
+
+
+class Phone(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    tag = db.Column(db.String(20))
