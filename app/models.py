@@ -91,7 +91,7 @@ class Post(db.Model):
         return '<Post {}>'.format(self.body)
 
 
-class Newtopic_post(db.Model):
+class Newtopic(db.Model):
     pid = db.Column(db.Integer, primary_key=True)
     topic = db.Column(db.String(20))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
