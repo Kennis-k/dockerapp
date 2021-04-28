@@ -43,6 +43,7 @@
                 <div class="card-body"
                      style="padding: 16px;border-radius: 10px; border: black 1px solid; width: 700px; margin-top: 18px;">
                     <h5 class="card-title">Card title</h5>
+                    {{ _('%(username)s said %(when)s',username=user_link, when=moment(post.timestamp).fromNow()) }}
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>

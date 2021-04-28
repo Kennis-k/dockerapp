@@ -95,8 +95,7 @@ def edit_profile():
 def new_topic():
     form = TopicForm()
     if form.validate_on_submit():
-        record = Newtopic(pid=form.pid.data, topic=form.topic.data, post=form.post.data, tag=form.tag.data,
-                          user_id=form.user_id.data)
+        record = Newtopic(topic=form.topic.data, tag=form.tag.data, post=form.post.data)
         db.session.add(record)
         db.session.commit()
         flash(_('Your post is now live!'))

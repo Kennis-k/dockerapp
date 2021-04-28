@@ -20,6 +20,7 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
+    topic = db.relationship('Newtopic', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     followed = db.relationship(
@@ -93,17 +94,14 @@ class Post(db.Model):
 
 class Newtopic(db.Model):
     pid = db.Column(db.Integer, primary_key=True)
-    topic = db.Column(db.String(20))
+    topic = db.Column(db.String(20), nullable=False)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     tag = db.Column(db.String(20))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     post = db.Column(db.String(140))
 
-    def __init__(self, pid, topic, timestamp, user_id, post, tag):
-        self.pid = pid
+    def __init__(self, topic, post, tag):
         self.topic = topic
-        self.timestamp = timestamp
-        self.user_id = user_id
         self.post = post
         self.tag = tag
 

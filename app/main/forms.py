@@ -1,5 +1,6 @@
+from datetime import datetime
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, HiddenField, TextAreaField, SelectField
+from wtforms import StringField, SubmitField, HiddenField, TextAreaField, SelectField, DateTimeField
 from wtforms.validators import ValidationError, DataRequired, Length
 from flask_babel import _, lazy_gettext as _l
 from app.models import User
@@ -34,9 +35,7 @@ class TopicForm(FlaskForm):
     pid = HiddenField()
     topic = StringField(_l('Topic'), validators=[DataRequired(Length(1, 64))])
     post = TextAreaField(_l('Content'), validators=[Length(min=0, max=140)])
+    timestamp = HiddenField("Timestamp", default=datetime.utcnow, validators=[DataRequired()])
     tag = SelectField('tag', choices=CHOICES)
     user_id = HiddenField()
     submit = SubmitField(_l('Submit'))
-
-
-
