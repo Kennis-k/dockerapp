@@ -92,6 +92,7 @@ def edit_profile():
 
 
 @bp.route('/new_topic', methods=['GET', 'POST'])
+@login_required
 def new_topic():
     form = TopicForm()
     if form.validate_on_submit():
