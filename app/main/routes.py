@@ -3,8 +3,8 @@ from flask import render_template, flash, redirect, url_for, request, g
 from flask_login import current_user, login_required
 from flask_babel import _, get_locale
 from app import current_app, db
-from app.main.forms import EditProfileForm, PostForm
-from app.models import User, Post
+from app.main.forms import EditProfileForm, PostForm, TopicForm
+from app.models import User, Post, Newtopic
 from app.main import bp
 
 
@@ -89,6 +89,18 @@ def edit_profile():
         form.about_me.data = current_user.about_me
     return render_template('edit_profile.html', title=_('Edit Profile'),
                            form=form)
+
+
+@bp.route('/new_topic', methods=['GET', 'POST'])
+def new_topic():
+    form = TopicForm()
+    if form.validate_on_submit():
+        record = Newtopic(topic=form.topic.data, tag=form.tag.data, post=form.post.data)
+        db.session.add(record)
+        db.session.commit()
+        flash(_('Your post is now live!'))
+        return redirect(url_for('main.new_topic'))
+    return render_template('new_topic.html', title=_('new_topic'), form=form)
 
 
 @bp.route('/follow/<username>')

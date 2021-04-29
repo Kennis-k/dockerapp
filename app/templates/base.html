@@ -107,14 +107,9 @@
     </style>
 
     <div class="container"></div>
-    <nav class="navbar navbar-default " role="navigation">
+    <nav class="navbar navbar-default " role="navigation" style="background-color: #346599;">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                </button>
-                <a class="navbar-brand" href="{{ url_for('main.main') }}"><img src="HKGolden Icon.jpg"></a>
                 <button class="navbar-brand" type="button" data-toggle="collapse"
                         data-target="#navbarToggleExternalContent" style="margin-left: 165px">
                     <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
@@ -129,7 +124,7 @@
                         <a href="{{ url_for('main.main') }}"><span class="glyphicon glyphicon-home"></span></a>
                     </li>
                     <li>
-                        <a href="{{ url_for('auth.login') }}"><span class="glyphicon glyphicon-envelope"></span></a>
+                        <a href="{{ url_for('main.new_topic') }}">NewPost</a>
                     </li>
                     <li>
                         <a href="{{ url_for('auth.login') }}"><span class="glyphicon glyphicon-envelope"></span></a>
@@ -185,15 +180,17 @@
 
         {% include 'leftnav.html' %}
         {% block current_app_content %}{% endblock %}
-        {% include 'rightnav.html' %}
+
     </div>
 {% endblock %}
 
 {% block scripts %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     {{ super() }}
     {{ moment.include_moment() }}
     {{ moment.lang(g.locale) }}
     <script>
+
         const $menu = $('#navbarToggleExternalContent');
 
         $menu.on('show.bs.collapse', function () {
@@ -203,5 +200,7 @@
         $menu.on('hide.bs.collapse', function () {
             $menu.removeClass('menu-show');
         });
+
+
     </script>
 {% endblock %}

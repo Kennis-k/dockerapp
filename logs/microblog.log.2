@@ -1,103 +1,71 @@
-2021-04-30 01:54:27,281 ERROR: Exception on /user/test123 [GET] [in /Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2021-04-28 17:37:40,742 ERROR: Exception on /new_topic [POST] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
     context)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 508, in do_execute
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\default.py", line 508, in do_execute
     cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such table: blockers
+sqlite3.IntegrityError: datatype mismatch
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/pearly/PycharmProjects/HKGolden/app/main/routes.py", line 74, in user
-    next_url=next_url, prev_url=prev_url)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/pearly/PycharmProjects/HKGolden/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
-    {%- block html %}
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
-    {% block body -%}
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/Users/pearly/PycharmProjects/HKGolden/app/templates/base.html", line 187, in block "content"
-    {% block current_app_content %}{% endblock %}
-  File "/Users/pearly/PycharmProjects/HKGolden/app/templates/user.html", line 14, in block "current_app_content"
-    <p>{{ _('%(count)d blockers', count=user.blockers.count()) }}</p>
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/orm/dynamic.py", line 265, in count
-    return self._clone(sess).count()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3170, in count
-    return self.from_self(col).scalar()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2923, in scalar
-    ret = self.one()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2894, in one
-    ret = self.one_or_none()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2864, in one_or_none
-    ret = list(self)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2935, in __iter__
-    return self._execute_and_instances(context)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2958, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 948, in execute
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 100, in new_topic
+    db.session.commit()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 943, in commit
+    self.transaction.commit()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 467, in commit
+    self._prepare_impl()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 447, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2254, in flush
+    self._flush(objects)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2380, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2344, in _flush
+    flush_context.execute()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
+    rec.execute(self)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
+    uow
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 830, in _emit_insert_statements
+    execute(statement, multiparams)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
     return meth(self, multiparams, params)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
     return connection._execute_clauseelement(self, multiparams, params)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
     compiled_sql, distilled_params
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
     context)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
     exc_info
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
     reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 186, in reraise
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
     raise value.with_traceback(tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
     context)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 508, in do_execute
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\default.py", line 508, in do_execute
     cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: blockers [SQL: 'SELECT count(*) AS count_1 \nFROM (SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user, blockers \nWHERE blockers.blocker_id = ? AND blockers.blocker_id = user.id) AS anon_1'] [parameters: (2,)] (Background on this error at: http://sqlalche.me/e/e3q8)
-2021-04-30 01:54:56,290 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:55:17,797 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:56:14,690 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 02:00:14,904 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 02:01:20,804 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 02:02:41,568 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 02:03:26,947 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 02:03:39,570 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 02:04:03,655 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 02:05:59,034 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 02:06:18,004 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 02:06:27,109 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 02:06:41,818 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 02:10:03,822 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 02:10:46,720 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) datatype mismatch [SQL: 'INSERT INTO newtopic (pid, topic, timestamp, tag, user_id, post) VALUES (?, ?, ?, ?, ?, ?)'] [parameters: ('', 'lkj', '2021-04-28 09:37:40.742492', '1', None, 'fds')] (Background on this error at: http://sqlalche.me/e/gkpj)
+2021-04-28 17:42:11,452 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]

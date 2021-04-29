@@ -1,60 +1,70 @@
-2021-04-30 02:10:48,076 ERROR: Exception on /user/pearly0125 [GET] [in /Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2021-04-28 17:42:15,969 ERROR: Exception on /new_topic [POST] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\default.py", line 508, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: datatype mismatch
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/pearly/PycharmProjects/HKGolden/app/main/routes.py", line 74, in user
-    next_url=next_url, prev_url=prev_url)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/templating.py", line 134, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 100, in new_topic
+    db.session.commit()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 943, in commit
+    self.transaction.commit()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 467, in commit
+    self._prepare_impl()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 447, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2254, in flush
+    self._flush(objects)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2380, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2344, in _flush
+    flush_context.execute()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
+    rec.execute(self)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
+    uow
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 830, in _emit_insert_statements
+    execute(statement, multiparams)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
     raise value.with_traceback(tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/app/templates/user.html", line 26, in template
-    {% else current_user.is_blocked(user) %}
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 268, in parse_block
-    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 223, in parse_if
-    drop_needle=True)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 164, in parse_statements
-    self.stream.expect('block_end')
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/lexer.py", line 384, in expect
-    self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: expected token 'end of statement block', got 'current_user'
-2021-04-30 02:11:14,289 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\default.py", line 508, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) datatype mismatch [SQL: 'INSERT INTO newtopic (pid, topic, timestamp, tag, user_id, post) VALUES (?, ?, ?, ?, ?, ?)'] [parameters: ('', 'lkj', '2021-04-28 09:42:15.968713', '1', None, 'fds')] (Background on this error at: http://sqlalche.me/e/gkpj)

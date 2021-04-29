@@ -25,6 +25,7 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
+    topic = db.relationship('Newtopic', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     followed = db.relationship(
@@ -111,3 +112,38 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+
+
+class Newtopic(db.Model):
+    pid = db.Column(db.Integer, primary_key=True)
+    topic = db.Column(db.String(20), nullable=False)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    tag = db.Column(db.String(20))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    post = db.Column(db.String(140))
+
+    def __init__(self, topic, post, tag):
+        self.topic = topic
+        self.post = post
+        self.tag = tag
+
+
+class Ads(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), nullable=False)
+    data = db.Column(db.LargeBinary, nullable=False)  # Actual data, needed for Download
+    rendered_data = db.Column(db.Text, nullable=False)  # Data to render the pic in browser
+    pic_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    def __init__(self, id, name, data, user_id, rendered_data, pic_date):
+        self.id = id
+        self.name = name
+        self.data = data
+        self.user_id = user_id
+        self.pic_date = pic_date
+        self.rendered_data = rendered_data
+
+
+class Phone(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    tag = db.Column(db.String(20))
