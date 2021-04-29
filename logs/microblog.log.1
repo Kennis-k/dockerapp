@@ -1,107 +1,60 @@
-2021-04-20 15:06:52,303 ERROR: Exception on /auth/login [GET] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
+2021-04-30 02:10:48,076 ERROR: Exception on /user/pearly0125 [GET] [in /Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
     raise value
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\auth\routes.py", line 28, in login
-    return render_template('auth/login.html', title=_('Sign In'), form=form)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/pearly/PycharmProjects/HKGolden/app/main/routes.py", line 74, in user
+    next_url=next_url, prev_url=prev_url)
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\auth\login.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 21, in block "body"
-    {% block navbar %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\base.html", line 160, in block "navbar"
-    <button type="button" class="btn btn-link btn-sm" href="{{ url_for('mina.main') }}"><span
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
-    force_external=external)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'mina.main'. Did you mean 'main.main' instead?
-2021-04-20 15:07:00,736 ERROR: Exception on /auth/login [GET] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\auth\routes.py", line 28, in login
-    return render_template('auth/login.html', title=_('Sign In'), form=form)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\auth\login.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 21, in block "body"
-    {% block navbar %}
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\templates\base.html", line 160, in block "navbar"
-    <button type="button" class="btn btn-link btn-sm" href="{{ url_for('mina.main') }}"><span
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
-    force_external=external)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'mina.main'. Did you mean 'main.main' instead?
-2021-04-20 15:07:11,959 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
+  File "/Users/pearly/PycharmProjects/HKGolden/app/templates/user.html", line 26, in template
+    {% else current_user.is_blocked(user) %}
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 223, in parse_if
+    drop_needle=True)
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 164, in parse_statements
+    self.stream.expect('block_end')
+  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/lexer.py", line 384, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of statement block', got 'current_user'
+2021-04-30 02:11:14,289 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]

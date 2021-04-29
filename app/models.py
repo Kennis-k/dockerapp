@@ -13,6 +13,11 @@ followers = db.Table(
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
 )
 
+blockers = db.Table(
+    'blockers',
+    db.Column('blocker_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('blocked_id', db.Integer, db.ForeignKey('user.id'))
+)
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -27,6 +32,11 @@ class User(UserMixin, db.Model):
         primaryjoin=(followers.c.follower_id == id),
         secondaryjoin=(followers.c.followed_id == id),
         backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
+    blocked = db.relationship(
+        'User', secondary=blockers,
+        primaryjoin=(blockers.c.blocker_id == id),
+        secondaryjoin=(blockers.c.blocked_id == id),
+        backref=db.backref('blockers', lazy='dynamic'), lazy='dynamic')
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
@@ -60,6 +70,18 @@ class User(UserMixin, db.Model):
             followers.c.follower_id == self.id)
         own = Post.query.filter_by(user_id=self.id)
         return followed.union(own).order_by(Post.timestamp.desc())
+
+    def block(self, user):
+        if not self.is_blocked(user):
+            self.blocked.append(user)
+
+    def unblock(self, user):
+        if self.is_blocked(user):
+            self.blocked.remove(user)
+
+    def is_blocked(self, user):
+        return self.blocked.filter(
+            blockers.c.blocked_id == user.id).count() > 0
 
     def get_reset_password_token(self, expires_in=600):
         return jwt.encode(
