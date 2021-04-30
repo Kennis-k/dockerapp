@@ -60,19 +60,22 @@
                         </li>
                     </div>
                     <div class="Third_item_2">
-                        <li><a href="#study"><span class="glyphicon glyphicon-phone" aria-hidden="true"
+                        <li>
+                            <a href="{{ url_for('main.pet_post') }}"><span class="glyphicon glyphicon-phone" aria-hidden="true"
                                                    style="float: left"></span>寵物台</a>
                         </li>
                     </div>
                     </ul>
                     <h6>其他 </h6>
                     <div class="Third_item">
-                        <li><a href="#chatting"><span class="glyphicon glyphicon-tint" aria-hidden="true"
+                        <!--<h1> {{ current_user }}</h1>-->
+                        <li><a href="{{ url_for('main.sell_post') }}"><span class="glyphicon glyphicon-tint" aria-hidden="true"
                                                       style="float: left"></span>買賣台</a>
                         </li>
                     </div>
                     <div class="Third_item_2">
-                        <li><a href="#study"><span class="glyphicon glyphicon-phone" aria-hidden="true"
+                        <!--<h1> {{ current_user }}</h1>-->
+                        <li><a href="{{ url_for('main.activity_post') }}"><span class="glyphicon glyphicon-phone" aria-hidden="true"
                                                    style="float: left"></span>活動台</a>
                         </li>
                     </div>

@@ -1,13 +1,68 @@
-2021-04-28 17:37:40,742 ERROR: Exception on /new_topic [POST] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
+2021-04-30 15:59:30,365 ERROR: Exception on / [GET] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\default.py", line 508, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: datatype mismatch
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 2082, in _determine_joins
+    consider_as_foreign_keys=consider_as_foreign_keys
+  File "<string>", line 2, in join_condition
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\sql\selectable.py", line 979, in _join_condition
+    (a.description, b.description, hint))
+sqlalchemy.exc.NoForeignKeysError: Can't find any foreign key relationships between 'newtopic' and 'reply'.
 
-The above exception was the direct cause of the following exception:
+During handling of the above exception, another exception occurred:
 
+Traceback (most recent call last):
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\main\routes.py", line 13, in before_request
+    if current_user.is_authenticated:
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
+    return self.__local()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\models.py", line 105, in load_user
+    return User.query.get(int(id))
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 512, in __get__
+    mapper = orm.class_mapper(type)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\base.py", line 421, in class_mapper
+    mapper = _inspect_mapped_class(class_, configure=configure)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\base.py", line 400, in _inspect_mapped_class
+    mapper._configure_all()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\mapper.py", line 1272, in _configure_all
+    configure_mappers()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\mapper.py", line 3029, in configure_mappers
+    mapper._post_configure_properties()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\mapper.py", line 1828, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\interfaces.py", line 184, in init
+    self.do_init()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 1656, in do_init
+    self._setup_join_conditions()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 1731, in _setup_join_conditions
+    can_be_synced_fn=self._columns_are_mapped
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 1998, in __init__
+    self._determine_joins()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 2103, in _determine_joins
+    "specify a 'primaryjoin' expression." % self.prop)
+sqlalchemy.exc.NoForeignKeysError: Could not determine join condition between parent/child tables on relationship Newtopic.reply_pid - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+2021-04-30 16:02:11,751 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\__init__.py:74]
+2021-04-30 16:02:21,272 ERROR: Exception on /pet_post [GET] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -21,51 +76,47 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 100, in new_topic
-    db.session.commit()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 943, in commit
-    self.transaction.commit()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 467, in commit
-    self._prepare_impl()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 447, in _prepare_impl
-    self.session.flush()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2254, in flush
-    self._flush(objects)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2380, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
-    raise value
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2344, in _flush
-    flush_context.execute()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
-    rec.execute(self)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
-    uow
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
-    mapper, table, insert)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 830, in _emit_insert_statements
-    execute(statement, multiparams)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+  File "C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\main\routes.py", line 37, in pet_post
+    return render_template('pet_post.html', Newtopic=Newtopic.query.filter_by(tag=8).all())
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\engine\default.py", line 508, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) datatype mismatch [SQL: 'INSERT INTO newtopic (pid, topic, timestamp, tag, user_id, post) VALUES (?, ?, ?, ?, ?, ?)'] [parameters: ('', 'lkj', '2021-04-28 09:37:40.742492', '1', None, 'fds')] (Background on this error at: http://sqlalche.me/e/gkpj)
-2021-04-28 17:42:11,452 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
+  File "C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\templates\pet_post.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\templates\base.html", line 183, in block "content"
+    {% block current_app_content %}{% endblock %}
+  File "C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\templates\pet_post.html", line 56, in block "current_app_content"
+    {{ wtf.quick_form(form) }}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\runtime.py", line 579, in _invoke
+    rv = self._func(*arguments)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\wtf.html", line 200, in template
+    {{ form.hidden_tag() }}
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2021-04-30 16:12:24,820 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\__init__.py:74]
+2021-04-30 16:12:41,154 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\__init__.py:74]
+2021-04-30 16:14:23,365 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\__init__.py:74]
+2021-04-30 16:15:27,358 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\__init__.py:74]
+2021-04-30 16:20:28,974 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\__init__.py:74]
+2021-04-30 16:21:15,863 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\__init__.py:74]
+2021-04-30 16:26:54,048 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\__init__.py:74]

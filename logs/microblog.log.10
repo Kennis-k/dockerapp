@@ -1,100 +1,15 @@
-<<<<<<< HEAD
-2021-04-29 16:10:38,168 ERROR: Exception on /index [GET] [in /Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2021-04-30 15:47:20,245 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\__init__.py:74]
+2021-04-30 15:47:24,341 ERROR: Exception on / [GET] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/pearly/PycharmProjects/HKGolden/app/main/routes.py", line 44, in index
-    prev_url=prev_url)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/app/templates/base.html", line 164, in template
-    {% endblock %}
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1005, in render
-    return concat(self.root_render_func(self.new_context(vars)))
-  File "/Users/pearly/PycharmProjects/HKGolden/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/pearly/PycharmProjects/HKGolden/app/templates/base.html", line 164, in template
-    {% endblock %}
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 144, in parse_statement
-    self.fail_unknown_tag(token.value, token.lineno)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 97, in fail_unknown_tag
-    return self._fail_ut_eof(name, self._end_token_stack, lineno)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 90, in _fail_ut_eof
-    self.fail(' '.join(message), lineno)
-  File "/Users/pearly/PycharmProjects/HKGolden/venv/lib/python3.7/site-packages/jinja2/parser.py", line 59, in fail
-    raise exc(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'.
-2021-04-29 16:11:06,466 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 16:13:36,902 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 16:14:37,315 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 16:15:15,164 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 16:18:37,903 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 16:19:13,638 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 16:55:23,263 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 16:55:48,457 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 17:07:13,481 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 17:07:23,553 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 17:08:10,051 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 17:09:33,746 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 17:09:49,389 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 17:11:10,856 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 22:11:34,434 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 22:15:27,945 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 22:15:56,642 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 22:27:55,255 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 22:29:50,813 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 22:30:25,959 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 22:35:09,752 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 22:37:10,739 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 22:55:30,271 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 22:59:30,031 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-29 23:09:30,742 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:39:54,952 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:41:43,238 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:41:45,944 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:41:56,044 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:45:35,256 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:45:57,383 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:47:23,747 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:47:28,161 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:47:43,115 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:47:51,069 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:49:27,139 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-2021-04-30 01:49:33,748 INFO: Microblog startup [in /Users/pearly/PycharmProjects/HKGolden/app/__init__.py:74]
-=======
-2021-04-28 01:15:04,621 ERROR: Exception on /new_topic [POST] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 2082, in _determine_joins
+    consider_as_foreign_keys=consider_as_foreign_keys
+  File "<string>", line 2, in join_condition
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\sql\selectable.py", line 979, in _join_condition
+    (a.description, b.description, hint))
+sqlalchemy.exc.NoForeignKeysError: Can't find any foreign key relationships between 'newtopic' and 'reply'.
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -104,104 +19,47 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 97, in new_topic
-    post = Post(body=form.post.data, author=current_user)
-  File "<string>", line 4, in __init__
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\state.py", line 417, in _initialize_instance
-    manager.dispatch.init_failure(self, args, kwargs)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
-    raise value
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\state.py", line 414, in _initialize_instance
-    return manager.original_init(*mixed[1:], **kwargs)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\ext\declarative\base.py", line 700, in _declarative_constructor
-    setattr(self, k, kwargs[k])
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 229, in __set__
-    instance_dict(instance), value, None)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 813, in set
-    value = self.fire_replace_event(state, dict_, value, old, initiator)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 833, in fire_replace_event
-    state, value, previous, initiator or self._replace_token)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1181, in emit_backref_from_scalar_set_event
-    child_state, child_dict = instance_state(child),\
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\main\routes.py", line 13, in before_request
+    if current_user.is_authenticated:
   File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
     return getattr(self._get_current_object(), name)
-AttributeError: 'AnonymousUserMixin' object has no attribute '_sa_instance_state'
-2021-04-28 01:23:30,179 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-28 01:23:39,972 ERROR: Exception on /new_topic [POST] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 97, in new_topic
-    record = Newtopic(topic=form.topic.data, post=form.post.data, tag=form.tag.data)
-TypeError: __init__() missing 3 required positional arguments: 'pid', 'timestamp', and 'user_id'
-2021-04-28 01:43:54,036 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-28 01:44:05,392 ERROR: Exception on /new_topic [POST] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 97, in new_topic
-    record = Newtopic(topic=form.topic.data, post=form.post.data, tag=form.tag.data)
-TypeError: __init__() missing 3 required positional arguments: 'pid', 'timestamp', and 'user_id'
-2021-04-28 01:46:09,932 ERROR: Exception on /new_topic [POST] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 97, in new_topic
-    record = Newtopic(topic=form.topic.data, post=form.post.data, tag=form.tag.data)
-TypeError: __init__() missing 3 required positional arguments: 'pid', 'timestamp', and 'user_id'
-2021-04-28 01:53:29,765 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
-2021-04-28 01:54:06,429 ERROR: Exception on /new_topic [POST] [in C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Piggy\PycharmProjects\CWA-EA\app\main\routes.py", line 97, in new_topic
-    record = Newtopic(pid=form.pid.data, timestamp=form.timestamp.data, user_id=form.user_id.data,
-AttributeError: 'TopicForm' object has no attribute 'timestamp'
-2021-04-28 01:54:52,555 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\CWA-EA\app\__init__.py:74]
->>>>>>> 593fe042620a6dc5d1acc85f55bf58d726937e45
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
+    return self.__local()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\models.py", line 105, in load_user
+    return User.query.get(int(id))
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 512, in __get__
+    mapper = orm.class_mapper(type)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\base.py", line 421, in class_mapper
+    mapper = _inspect_mapped_class(class_, configure=configure)
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\base.py", line 400, in _inspect_mapped_class
+    mapper._configure_all()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\mapper.py", line 1272, in _configure_all
+    configure_mappers()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\mapper.py", line 3029, in configure_mappers
+    mapper._post_configure_properties()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\mapper.py", line 1828, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\interfaces.py", line 184, in init
+    self.do_init()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 1656, in do_init
+    self._setup_join_conditions()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 1731, in _setup_join_conditions
+    can_be_synced_fn=self._columns_are_mapped
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 1998, in __init__
+    self._determine_joins()
+  File "C:\Users\Piggy\PycharmProjects\CWA-EA\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 2103, in _determine_joins
+    "specify a 'primaryjoin' expression." % self.prop)
+sqlalchemy.exc.NoForeignKeysError: Could not determine join condition between parent/child tables on relationship Newtopic.replys - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+2021-04-30 15:59:19,553 INFO: Microblog startup [in C:\Users\Piggy\PycharmProjects\newproject\CWA-EA\app\__init__.py:74]

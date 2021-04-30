@@ -19,6 +19,7 @@ blockers = db.Table(
     db.Column('blocked_id', db.Integer, db.ForeignKey('user.id'))
 )
 
+
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
@@ -26,6 +27,7 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(128))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     topic = db.relationship('Newtopic', lazy='dynamic')
+    replys = db.relationship('Reply', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     followed = db.relationship(
@@ -116,16 +118,18 @@ class Post(db.Model):
 
 class Newtopic(db.Model):
     pid = db.Column(db.Integer, primary_key=True)
-    topic = db.Column(db.String(20), nullable=False)
+    topic = db.Column(db.String(20))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     tag = db.Column(db.String(20))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     post = db.Column(db.String(140))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    author = db.relationship('User')
 
-    def __init__(self, topic, post, tag):
+    def __init__(self, topic, post, tag, user_id):
         self.topic = topic
         self.post = post
         self.tag = tag
+        self.user_id = user_id
 
 
 class Ads(db.Model):
@@ -147,3 +151,29 @@ class Ads(db.Model):
 class Phone(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     tag = db.Column(db.String(20))
+
+
+class Reply(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    tag = db.Column(db.String(20))
+    post = db.Column(db.String(140))
+    name = db.Column(db.String(20))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+    def __init__(self, post, name, user_id):
+        self.post = post
+        self.name = name
+        self.user_id = user_id
+
+
+class Record(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    tag = db.Column(db.String(20))
+    post = db.Column(db.String(140))
+    pid = db.Column(db.Integer)
+
+    def __init__(self, post, tag, pid):
+        self.post = post
+        self.tag = tag
+        self.pid = pid

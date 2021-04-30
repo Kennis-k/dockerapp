@@ -28,14 +28,25 @@ class PostForm(FlaskForm):
     submit = SubmitField(_l('Submit'))
 
 
-CHOICES = [('1', '硬件台'), ('2', '音樂台'), ('3', '飲食台')]
+CHOICES = [('1', '吹水台'), ('2', '高登熱'), ('3', '硬件台'), ('4', '手機台'), ('5', '音樂台'), ('6', '飲食台'),
+           ('7', '上班台'), ('8', '寵物台'), ('9', '買賣台'), ('10', '活動台')]
 
 
 class TopicForm(FlaskForm):
     pid = HiddenField()
+    tag = SelectField('tag', choices=CHOICES)
     topic = StringField(_l('Topic'), validators=[DataRequired(Length(1, 64))])
     post = TextAreaField(_l('Content'), validators=[Length(min=0, max=140)])
     timestamp = HiddenField("Timestamp", default=datetime.utcnow, validators=[DataRequired()])
-    tag = SelectField('tag', choices=CHOICES)
     user_id = HiddenField()
+    user_name = HiddenField()
+    submit = SubmitField(_l('Submit'))
+
+
+class ReplyForm(FlaskForm):
+    id = HiddenField()
+    post = TextAreaField(_l('Content'), validators=[Length(min=0, max=140)])
+    timestamp = HiddenField("Timestamp", default=datetime.utcnow, validators=[DataRequired()])
+    user_id = HiddenField()
+    name = HiddenField()
     submit = SubmitField(_l('Submit'))

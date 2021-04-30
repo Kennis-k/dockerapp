@@ -3,8 +3,8 @@ from flask import render_template, flash, redirect, url_for, request, g
 from flask_login import current_user, login_required
 from flask_babel import _, get_locale
 from app import current_app, db
-from app.main.forms import EditProfileForm, PostForm, TopicForm
-from app.models import User, Post, Newtopic
+from app.main.forms import EditProfileForm, PostForm, TopicForm, ReplyForm
+from app.models import User, Post, Newtopic, Reply, Record
 from app.main import bp
 
 
@@ -19,7 +19,22 @@ def before_request():
 @bp.route('/', methods=['GET', 'POST'])
 @bp.route('/main', methods=['GET', 'POST'])
 def main():
-    return render_template('main.html')
+    return render_template('main.html', Newtopic=Newtopic.query.filter_by(tag=1).all())
+
+
+@bp.route('/activity_post', methods=['GET'])
+def activity_post():
+    return render_template('activity_post.html', Newtopic=Newtopic.query.filter_by(tag=10).all())
+
+
+@bp.route('/sell_post', methods=['GET'])
+def sell_post():
+    return render_template('sell_post.html', Newtopic=Newtopic.query.filter_by(tag=9).all())
+
+
+@bp.route('/pet_post', methods=['GET'])
+def pet_post():
+    return render_template('pet_post.html', Newtopic=Newtopic.query.filter_by(tag=8).all())
 
 
 @bp.route('/index', methods=['GET', 'POST'])
@@ -91,16 +106,17 @@ def edit_profile():
                            form=form)
 
 
-@bp.route('/new_topic', methods=['GET', 'POST'])
+@bp.route('/new_topic/<username>', methods=['GET', 'POST'])
 @login_required
-def new_topic():
+def new_topic(username):
+    user = User.query.filter_by(username=username).first()
     form = TopicForm()
     if form.validate_on_submit():
-        record = Newtopic(topic=form.topic.data, tag=form.tag.data, post=form.post.data)
+        record = Newtopic(topic=form.topic.data, tag=form.tag.data, post=form.post.data, user_id=user.id)
         db.session.add(record)
         db.session.commit()
         flash(_('Your post is now live!'))
-        return redirect(url_for('main.new_topic'))
+        return redirect(url_for('main.main'))
     return render_template('new_topic.html', title=_('new_topic'), form=form)
 
 
@@ -134,6 +150,7 @@ def unfollow(username):
     db.session.commit()
     flash(_('You are not following %(username)s.', username=username))
     return redirect(url_for('main.user', username=username))
+
 
 @bp.route('/block/<username>')
 @login_required
